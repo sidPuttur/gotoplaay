@@ -1,0 +1,61 @@
+<header></header>
+
+<ion-content padding>
+
+  <ion-list>
+    <h6>{{_eventData?.general?.title}}</h6>
+    <ion-item>
+      <span>Start Date:</span><span>{{_eventData?.general?.startdate}}</span>
+    </ion-item>
+    <ion-item>
+      <span>Start Time:</span><span>{{_eventData?.general?.timeStarts}}</span>
+    </ion-item>
+    <ion-item>
+      <span>End Date:</span><span>{{_eventData?.general?.enddate}}</span>
+    </ion-item>
+    <ion-item>
+      <span>End Time:</span><span>{{_eventData?.general?.timeEnds}}</span>
+    </ion-item>
+    <ion-item>
+      <span>Venue:</span><span>{{_eventData?.general?.where}}</span>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <h5>Contacts</h5>
+    <ion-item *ngFor="let contact of _eventData?.contacts">
+      <span>Mobile:</span> <span>{{contact?.mobile}}</span>
+    </ion-item>
+  </ion-list>
+
+   <ion-list>
+    <h5>Trophy Details</h5>
+    <ion-item>
+      <span *ngIf=" _eventData?.trophy?.medal">Medal:</span><span>Yes</span>
+    </ion-item>
+     <ion-item>
+      <span *ngIf=" _eventData?.trophy?.trophy">Trophy:</span><span>Yes</span>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <h5 *ngIf="_eventData?.matchList?.length > 0">Match Details</h5>
+    <ion-list *ngFor="let match of _eventData?.matchList">
+    <ion-item>
+      <span>Event Type:</span><span>{{match?.eventType}}</span>
+    </ion-item>
+     <ion-item>
+      <span>Age Category:</span><span>{{match?.ageCategory}}</span>
+    </ion-item>
+    <ion-item>
+      <span>Match Type:</span><span>{{match?.matchType}}</span>
+    </ion-item>
+    <ion-item>
+      <span>Entry Fee:</span><span>{{match?.entryFee}}</span>
+    </ion-item>
+    <ion-item>
+      <span>Match Category:</span><span>{{match?.matchCategory}}</span>
+    </ion-item>
+    </ion-list>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,23 @@
+
+<header></header>
+
+
+<ion-content padding>
+  <h4>Upcoming Events</h4>
+  <ion-list *ngFor="let events of eventList" (click)="gotoEventDetails(events)">
+    <ion-item *ngIf="checkEventDate(events?.general?.startdate)">
+        <ion-icon name="ios-heart-outline"></ion-icon>
+      <h6>{{events.general.title}}</h6>
+      <p>{{events.general.startdate}}</p>
+    </ion-item>
+  </ion-list>
+  <h4>Past Events</h4>
+    <ion-list *ngFor="let events of eventList" (click)="gotoEventDetails(events)">
+    <ion-item *ngIf="!checkEventDate(events?.general?.startdate)">
+      <ion-icon name="ios-heart-outline"></ion-icon>
+      <h6>{{events.general.title}}</h6>
+      <p>{{events.general.startdate}}</p>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

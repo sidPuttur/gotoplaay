@@ -1,0 +1,131 @@
+<header></header>
+
+<ion-content padding>
+
+  <ion-list>
+    <h6>General Details</h6>
+    <ion-item>
+    <ion-label color="primary" floating>Title</ion-label>
+    <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>Start Date:</ion-label>
+      <ion-datetime displayFormat="DD/MMM/YYYY" ></ion-datetime>
+    </ion-item>
+      <ion-item>
+     <ion-label color="primary" floating>Start Time:</ion-label>
+    <ion-datetime  displayFormat="h:mm A" pickerFormat="h mm A"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>End Date:</ion-label>
+      <ion-datetime displayFormat="DD/MMM/YYYY" ></ion-datetime>
+    </ion-item>
+    <ion-item>
+     <ion-label color="primary" floating>End Time:</ion-label>
+    <ion-datetime  displayFormat="h:mm A" pickerFormat="h mm A"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>Venue:</ion-label>
+    <ion-input type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <h5>Contacts Details</h5>
+    <ion-item>
+      <ion-label color="primary" floating>Name:</ion-label>
+    <ion-input type="text"></ion-input>
+    </ion-item> 
+      <ion-item>
+      <ion-label color="primary" floating>Mobile:</ion-label>
+    <ion-input type="number"></ion-input>
+    </ion-item> 
+  </ion-list>
+
+
+  <ion-list>
+    <h5>Trophy Details</h5>
+    <ion-list>
+    <ion-item>
+        <ion-label>Pepperoni</ion-label>
+    <ion-toggle></ion-toggle>
+    </ion-item>
+     <ion-item>
+         <ion-label>Trophy</ion-label>
+    <ion-toggle></ion-toggle>
+    </ion-item>
+    <ion-item>
+          <ion-label>Medal</ion-label>
+    <ion-toggle></ion-toggle>
+    </ion-item>
+    <ion-item>
+          <ion-label>Goodies</ion-label>
+    <ion-toggle></ion-toggle>
+    </ion-item>
+    <ion-item>
+         <ion-label>Certificate</ion-label>
+    <ion-toggle></ion-toggle>
+    </ion-item>
+   <ion-item>
+         <ion-label>Refreshment</ion-label>
+    <ion-toggle></ion-toggle>
+    </ion-item>
+   <ion-item>
+         <ion-label>Lunch</ion-label>
+    <ion-toggle></ion-toggle>
+    </ion-item>
+    </ion-list>
+  </ion-list>
+
+  <ion-list>
+    <h6>Match Category</h6>
+    <ion-item>
+        <ion-label>Event Type</ion-label>
+        <ion-select [(ngModel)]="gender">
+          <ion-option *ngFor="let eventType of eventTypeList" value="{{eventType}}">{{ eventType?.name }}</ion-option>
+        </ion-select>
+    </ion-item>
+      <ion-item>
+        <ion-label>Age Category</ion-label>
+        <ion-select [(ngModel)]="gender">
+          <ion-option *ngFor="let ageCat of ageCategoryList" value="{{ageCat}}">{{ageCat?.name}}</ion-option>
+        </ion-select>
+    </ion-item>
+      <ion-item>
+        <ion-label>Match Category</ion-label>
+        <ion-select [(ngModel)]="gender">
+          <ion-option value="matchCat" *ngFor="let matchCat of matchCategoryList">{{matchCat?.name}}</ion-option>
+          
+        </ion-select>
+    </ion-item>
+      <ion-item>
+        <ion-label>Match Type</ion-label>
+        <ion-select [(ngModel)]="gender">
+          <ion-option *ngFor="let matchType of matchTypeList" value="{{matchType}}" >{{ matchType?.name }}</ion-option>
+        </ion-select>
+    </ion-item>
+      <ion-item>
+        <ion-label>Entry Fee</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Prize Name</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Prize Amount</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <h6>Terms Details</h6>
+    <ion-item>
+        <ion-label>Terms</ion-label>
+        <ion-select [(ngModel)]="gender">
+          <ion-option value="f">Female</ion-option>
+          <ion-option value="m">Male</ion-option>
+        </ion-select>
+    </ion-item>
+  </ion-list>
+</ion-content>
